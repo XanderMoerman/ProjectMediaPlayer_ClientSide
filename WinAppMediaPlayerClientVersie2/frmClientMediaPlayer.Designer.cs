@@ -65,6 +65,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlSongs = new System.Windows.Forms.Panel();
             this.lstSong = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.bgWorkerOntvang = new System.ComponentModel.BackgroundWorker();
             this.pnlClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -218,6 +219,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnVerbreek.TabIndex = 5;
             this.btnVerbreek.Text = "Verbreek verbinding";
             this.btnVerbreek.UseVisualStyleBackColor = true;
+            this.btnVerbreek.Click += new System.EventHandler(this.btnVerbreek_Click);
             // 
             // label2
             // 
@@ -277,6 +279,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnZoekServer.TabIndex = 4;
             this.btnZoekServer.Text = "Zoek Server";
             this.btnZoekServer.UseVisualStyleBackColor = true;
+            this.btnZoekServer.Click += new System.EventHandler(this.btnZoekServer_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -316,6 +319,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnZend.TabIndex = 8;
             this.btnZend.Text = "Stuur bericht naar Server";
             this.btnZend.UseVisualStyleBackColor = true;
+            this.btnZend.Click += new System.EventHandler(this.btnZend_Click);
             // 
             // label5
             // 
@@ -515,6 +519,11 @@ namespace WinAppMediaPlayerClientVersie2
             this.label7.TabIndex = 5;
             this.label7.Text = "Alle Songs :";
             // 
+            // bgWorkerOntvang
+            // 
+            this.bgWorkerOntvang.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgWorkerOntvang_DoWork);
+            this.bgWorkerOntvang.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgWorkerOntvang_RunWorkerCompleted);
+            // 
             // frmClientMediaPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -595,6 +604,7 @@ namespace WinAppMediaPlayerClientVersie2
         private System.Windows.Forms.Panel pnlSongs;
         private System.Windows.Forms.ListBox lstSong;
         private System.Windows.Forms.Label label7;
+        private System.ComponentModel.BackgroundWorker bgWorkerOntvang;
     }
 }
 
