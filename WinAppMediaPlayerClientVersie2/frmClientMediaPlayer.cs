@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Sockets;
 using System.Net;
 using System.IO;
+using System.Net.Http;
 
 namespace WinAppMediaPlayerClientVersie2
 {
@@ -46,18 +47,21 @@ namespace WinAppMediaPlayerClientVersie2
             {
                 client = new TcpClient();
                 client.Connect(address, poort);
-                if (client.Connected)
-                {
-                    writer = new StreamWriter(client.GetStream());
-                    reader = new StreamReader(client.GetStream());
-                    writer.AutoFlush = true;
-                    // start ontvangen van data
-                    bgWorkerOntvang.WorkerSupportsCancellation = true;
-                    bgWorkerOntvang.RunWorkerAsync();
-                    btnZoekServer.Enabled = false;
-                    btnVerbreek.Enabled = true;
-                    splitContainer1.Panel1.Enabled = true;
-                }
+                while (!client.Connected) ; // wachten tot de client verbonden is
+
+                // als de client verbonden is
+                writer = new StreamWriter(client.GetStream());
+                reader = new StreamReader(client.GetStream());
+                writer.AutoFlush = true;
+                // start ontvangen van data
+                bgWorkerOntvang.WorkerSupportsCancellation = true;
+                bgWorkerOntvang.RunWorkerAsync();
+                btnZoekServer.Enabled = false;
+                btnVerbreek.Enabled = true;
+                tssClient.Text = "Client Verbonden";
+                tssClient.ForeColor = Color.Green;
+                splitContainer1.Panel2.Enabled = true;
+                
             }
             catch(Exception ex)
             {
@@ -73,7 +77,37 @@ namespace WinAppMediaPlayerClientVersie2
                 try
                 {
                     bericht = reader.ReadLine();
-                    if (bericht == "Disconnect") break;
+                    if (bericht == "Disconnect") break; // verbinding verbreken
+                    if (bericht.StartsWith("SONGLISTADD")) // add song
+                    {
+                        string Song = bericht.Remove(0, 12);
+                        if (lstSong.Items.Contains(Song)) return; // als de song al bestaat
+                        lstSong.Invoke(new MethodInvoker(delegate ()
+                        {
+                            lstSong.Items.Add(Song); // voeg toe aan de list
+                        }));
+                        return;
+                    }
+                    if (bericht.StartsWith("PLAYLISTADD")) // add song
+                    {
+                        string Song = bericht.Remove(0, 12);
+                        if (lstSongPlayList.Items.Contains(Song)) return; // als de song al bestaat
+                        lstSongPlayList.Invoke(new MethodInvoker(delegate ()
+                        {
+                            lstSongPlayList.Items.Add(Song); // voeg toe aan de list
+                        }));
+                        return;
+                    }
+                    if (bericht.StartsWith("PLAYLISTREMOVE"))
+                    {
+                        string Song = bericht.Remove(0, 15);
+                        lstSongPlayList.Invoke(new MethodInvoker(delegate ()
+                        {
+                            // als de song bestaat, verwijder
+                            if (lstSongPlayList.Items.Contains(Song)) lstSongPlayList.Items.Remove(Song);
+                        }));
+                        return;
+                    }
                     txtCommunicatie.Invoke(new MethodInvoker(delegate ()
                     {
                         txtCommunicatie.AppendText(bericht + "\r\n");
@@ -91,10 +125,12 @@ namespace WinAppMediaPlayerClientVersie2
 
         private void bgWorkerOntvang_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            txtMelding.AppendText("Verbinding verbroken");
+            txtMelding.AppendText("Verbinding verbroken | Background Worker Complete");
             btnVerbreek.Enabled = false;
             btnZoekServer.Enabled = true;
-            splitContainer1.Panel1.Enabled = false;
+            splitContainer1.Panel2.Enabled = false;
+            tssClient.Text = "Client niet verbonden";
+            tssClient.ForeColor = Color.Red;
         }
 
         private void btnZend_Click(object sender, EventArgs e)
@@ -117,12 +153,45 @@ namespace WinAppMediaPlayerClientVersie2
                 writer.WriteLine("Disconnect");
                 bgWorkerOntvang.CancelAsync();
                 client.Close();
-                txtMelding.AppendText("Verbinding verbroken");
+                txtMelding.AppendText("Verbinding verbroken | Verbreek button clicked");
+                tssClient.Text = "Client niet verbonden";
+                tssClient.ForeColor = Color.Red;
             }
             catch
             {
                 txtMelding.AppendText("Verbinding verbreken mislukt.");
             }
+        }
+
+        private void btnVoegToePlayList_Click(object sender, EventArgs e)
+        {
+            if (lstSong.SelectedIndex == -1) return; // als er niets geselecteerd is
+            string Song = lstSong.SelectedItem.ToString();
+            if (lstSongPlayList.Items.Contains(Song)) return; // als de song al bestaat
+            lstSongPlayList.Items.Add(Song); // voeg toe aan de list
+
+            // doorsturen naar server
+            writer.WriteLine("PLAYLISTADD " + Song);
+        }
+
+        private void btnVerwijderPlayList_Click(object sender, EventArgs e)
+        {
+            if (lstSongPlayList.SelectedIndex == -1) return; // als er niets geselecteerd is
+            string Song = lstSongPlayList.SelectedItem.ToString();
+            if (lstSongPlayList.Items.Contains(Song)) lstSongPlayList.Items.Remove(Song); // als de song bestaat, verwijder
+
+            // doorsturen naar client
+            writer.WriteLine("PLAYLISTREMOVE " + Song);
+        }
+
+        private void btnPlay_Click(object sender, EventArgs e)
+        {
+            writer.WriteLine("START-PLAYER");
+        }
+
+        private void btnStopPlay_Click(object sender, EventArgs e)
+        {
+            writer.WriteLine("STOP-PLAYER");
         }
     }
 }

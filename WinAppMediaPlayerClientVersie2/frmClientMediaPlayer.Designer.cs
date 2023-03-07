@@ -91,7 +91,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlClient.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlClient.Location = new System.Drawing.Point(0, 0);
             this.pnlClient.Name = "pnlClient";
-            this.pnlClient.Size = new System.Drawing.Size(934, 716);
+            this.pnlClient.Size = new System.Drawing.Size(1532, 716);
             this.pnlClient.TabIndex = 0;
             // 
             // splitContainer1
@@ -115,7 +115,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.splitContainer1.Panel2.AutoScroll = true;
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel2);
             this.splitContainer1.Panel2.Enabled = false;
-            this.splitContainer1.Size = new System.Drawing.Size(934, 716);
+            this.splitContainer1.Size = new System.Drawing.Size(1532, 716);
             this.splitContainer1.SplitterDistance = 616;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -138,7 +138,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.txtCommunicatie);
             this.splitContainer2.Panel2.Controls.Add(this.label4);
-            this.splitContainer2.Size = new System.Drawing.Size(934, 527);
+            this.splitContainer2.Size = new System.Drawing.Size(1532, 527);
             this.splitContainer2.SplitterDistance = 315;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -151,7 +151,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.txtMelding.Multiline = true;
             this.txtMelding.Name = "txtMelding";
             this.txtMelding.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtMelding.Size = new System.Drawing.Size(934, 282);
+            this.txtMelding.Size = new System.Drawing.Size(1532, 282);
             this.txtMelding.TabIndex = 1;
             // 
             // label3
@@ -159,7 +159,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(934, 33);
+            this.label3.Size = new System.Drawing.Size(1532, 33);
             this.label3.TabIndex = 0;
             this.label3.Text = "Meldingen:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -173,7 +173,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.txtCommunicatie.Multiline = true;
             this.txtCommunicatie.Name = "txtCommunicatie";
             this.txtCommunicatie.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCommunicatie.Size = new System.Drawing.Size(934, 177);
+            this.txtCommunicatie.Size = new System.Drawing.Size(1532, 177);
             this.txtCommunicatie.TabIndex = 2;
             // 
             // label4
@@ -181,7 +181,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(934, 31);
+            this.label4.Size = new System.Drawing.Size(1532, 31);
             this.label4.TabIndex = 1;
             this.label4.Text = "Berichten:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -205,17 +205,17 @@ namespace WinAppMediaPlayerClientVersie2
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.30303F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.36364F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 89);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1532, 89);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnVerbreek
             // 
             this.btnVerbreek.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVerbreek.Enabled = false;
-            this.btnVerbreek.Location = new System.Drawing.Point(470, 57);
+            this.btnVerbreek.Location = new System.Drawing.Point(769, 57);
             this.btnVerbreek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVerbreek.Name = "btnVerbreek";
-            this.btnVerbreek.Size = new System.Drawing.Size(461, 30);
+            this.btnVerbreek.Size = new System.Drawing.Size(760, 30);
             this.btnVerbreek.TabIndex = 5;
             this.btnVerbreek.Text = "Verbreek verbinding";
             this.btnVerbreek.UseVisualStyleBackColor = true;
@@ -226,9 +226,9 @@ namespace WinAppMediaPlayerClientVersie2
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(470, 0);
+            this.label2.Location = new System.Drawing.Point(769, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(461, 29);
+            this.label2.Size = new System.Drawing.Size(760, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Poort-nr.:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -240,7 +240,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(461, 29);
+            this.label1.Size = new System.Drawing.Size(760, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "IP-adres:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,7 +252,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.mtxtIPadres.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxtIPadres.Mask = "990,990,990,990";
             this.mtxtIPadres.Name = "mtxtIPadres";
-            this.mtxtIPadres.Size = new System.Drawing.Size(461, 22);
+            this.mtxtIPadres.Size = new System.Drawing.Size(760, 22);
             this.mtxtIPadres.TabIndex = 2;
             this.mtxtIPadres.Text = "127000000001";
             this.mtxtIPadres.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -260,11 +260,11 @@ namespace WinAppMediaPlayerClientVersie2
             // mtxtPoortnr
             // 
             this.mtxtPoortnr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mtxtPoortnr.Location = new System.Drawing.Point(470, 31);
+            this.mtxtPoortnr.Location = new System.Drawing.Point(769, 31);
             this.mtxtPoortnr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtxtPoortnr.Mask = "99000";
             this.mtxtPoortnr.Name = "mtxtPoortnr";
-            this.mtxtPoortnr.Size = new System.Drawing.Size(461, 22);
+            this.mtxtPoortnr.Size = new System.Drawing.Size(760, 22);
             this.mtxtPoortnr.TabIndex = 3;
             this.mtxtPoortnr.Text = "50000";
             this.mtxtPoortnr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -275,7 +275,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnZoekServer.Location = new System.Drawing.Point(3, 57);
             this.btnZoekServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZoekServer.Name = "btnZoekServer";
-            this.btnZoekServer.Size = new System.Drawing.Size(461, 30);
+            this.btnZoekServer.Size = new System.Drawing.Size(760, 30);
             this.btnZoekServer.TabIndex = 4;
             this.btnZoekServer.Text = "Zoek Server";
             this.btnZoekServer.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(934, 96);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1532, 96);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // txtBericht
@@ -305,7 +305,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.txtBericht.Location = new System.Drawing.Point(3, 41);
             this.txtBericht.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBericht.Name = "txtBericht";
-            this.txtBericht.Size = new System.Drawing.Size(993, 22);
+            this.txtBericht.Size = new System.Drawing.Size(1526, 22);
             this.txtBericht.TabIndex = 9;
             this.txtBericht.Text = "Bericht van client";
             // 
@@ -315,7 +315,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnZend.Location = new System.Drawing.Point(3, 61);
             this.btnZend.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnZend.Name = "btnZend";
-            this.btnZend.Size = new System.Drawing.Size(993, 35);
+            this.btnZend.Size = new System.Drawing.Size(1526, 35);
             this.btnZend.TabIndex = 8;
             this.btnZend.Text = "Stuur bericht naar Server";
             this.btnZend.UseVisualStyleBackColor = true;
@@ -326,7 +326,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(993, 39);
+            this.label5.Size = new System.Drawing.Size(1526, 39);
             this.label5.TabIndex = 10;
             this.label5.Text = "Verstuur bericht:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -336,7 +336,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitter1.Location = new System.Drawing.Point(0, 716);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(934, 10);
+            this.splitter1.Size = new System.Drawing.Size(1532, 10);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -345,9 +345,9 @@ namespace WinAppMediaPlayerClientVersie2
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssClient});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 988);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 949);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(934, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1532, 26);
             this.statusStrip1.TabIndex = 7;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -355,8 +355,8 @@ namespace WinAppMediaPlayerClientVersie2
             // 
             this.tssClient.ForeColor = System.Drawing.Color.Red;
             this.tssClient.Name = "tssClient";
-            this.tssClient.Size = new System.Drawing.Size(154, 20);
-            this.tssClient.Text = "CLient niet verbonden";
+            this.tssClient.Size = new System.Drawing.Size(151, 20);
+            this.tssClient.Text = "Client niet verbonden";
             // 
             // pnlMediaPlayer
             // 
@@ -369,7 +369,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlMediaPlayer.Location = new System.Drawing.Point(0, 726);
             this.pnlMediaPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMediaPlayer.Name = "pnlMediaPlayer";
-            this.pnlMediaPlayer.Size = new System.Drawing.Size(934, 262);
+            this.pnlMediaPlayer.Size = new System.Drawing.Size(1532, 223);
             this.pnlMediaPlayer.TabIndex = 8;
             // 
             // pnlPlayList
@@ -379,7 +379,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlPlayList.Location = new System.Drawing.Point(756, 0);
             this.pnlPlayList.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPlayList.Name = "pnlPlayList";
-            this.pnlPlayList.Size = new System.Drawing.Size(178, 262);
+            this.pnlPlayList.Size = new System.Drawing.Size(776, 223);
             this.pnlPlayList.TabIndex = 4;
             // 
             // pnlSongsList
@@ -390,7 +390,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlSongsList.Location = new System.Drawing.Point(0, 0);
             this.pnlSongsList.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSongsList.Name = "pnlSongsList";
-            this.pnlSongsList.Size = new System.Drawing.Size(178, 262);
+            this.pnlSongsList.Size = new System.Drawing.Size(776, 223);
             this.pnlSongsList.TabIndex = 5;
             // 
             // lstSongPlayList
@@ -401,7 +401,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.lstSongPlayList.Location = new System.Drawing.Point(0, 16);
             this.lstSongPlayList.Margin = new System.Windows.Forms.Padding(4);
             this.lstSongPlayList.Name = "lstSongPlayList";
-            this.lstSongPlayList.Size = new System.Drawing.Size(178, 246);
+            this.lstSongPlayList.Size = new System.Drawing.Size(776, 207);
             this.lstSongPlayList.TabIndex = 7;
             // 
             // label8
@@ -420,7 +420,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.splitter3.Location = new System.Drawing.Point(750, 0);
             this.splitter3.Margin = new System.Windows.Forms.Padding(4);
             this.splitter3.Name = "splitter3";
-            this.splitter3.Size = new System.Drawing.Size(6, 262);
+            this.splitter3.Size = new System.Drawing.Size(6, 223);
             this.splitter3.TabIndex = 3;
             this.splitter3.TabStop = false;
             // 
@@ -434,28 +434,30 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlKnoppen.Location = new System.Drawing.Point(650, 0);
             this.pnlKnoppen.Margin = new System.Windows.Forms.Padding(4);
             this.pnlKnoppen.Name = "pnlKnoppen";
-            this.pnlKnoppen.Size = new System.Drawing.Size(100, 262);
+            this.pnlKnoppen.Size = new System.Drawing.Size(100, 223);
             this.pnlKnoppen.TabIndex = 2;
             // 
             // btnStopPlay
             // 
-            this.btnStopPlay.Location = new System.Drawing.Point(8, 180);
+            this.btnStopPlay.Location = new System.Drawing.Point(8, 132);
             this.btnStopPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnStopPlay.Name = "btnStopPlay";
-            this.btnStopPlay.Size = new System.Drawing.Size(52, 28);
+            this.btnStopPlay.Size = new System.Drawing.Size(48, 28);
             this.btnStopPlay.TabIndex = 12;
             this.btnStopPlay.Text = "Stop";
             this.btnStopPlay.UseVisualStyleBackColor = true;
+            this.btnStopPlay.Click += new System.EventHandler(this.btnStopPlay_Click);
             // 
             // btnPlay
             // 
-            this.btnPlay.Location = new System.Drawing.Point(8, 144);
+            this.btnPlay.Location = new System.Drawing.Point(8, 96);
             this.btnPlay.Margin = new System.Windows.Forms.Padding(4);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(48, 28);
             this.btnPlay.TabIndex = 11;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // btnVerwijderPlayList
             // 
@@ -466,6 +468,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnVerwijderPlayList.TabIndex = 10;
             this.btnVerwijderPlayList.Text = "<<";
             this.btnVerwijderPlayList.UseVisualStyleBackColor = true;
+            this.btnVerwijderPlayList.Click += new System.EventHandler(this.btnVerwijderPlayList_Click);
             // 
             // btnVoegToePlayList
             // 
@@ -476,13 +479,14 @@ namespace WinAppMediaPlayerClientVersie2
             this.btnVoegToePlayList.TabIndex = 9;
             this.btnVoegToePlayList.Text = ">>";
             this.btnVoegToePlayList.UseVisualStyleBackColor = true;
+            this.btnVoegToePlayList.Click += new System.EventHandler(this.btnVoegToePlayList_Click);
             // 
             // splitter2
             // 
             this.splitter2.Location = new System.Drawing.Point(644, 0);
             this.splitter2.Margin = new System.Windows.Forms.Padding(4);
             this.splitter2.Name = "splitter2";
-            this.splitter2.Size = new System.Drawing.Size(6, 262);
+            this.splitter2.Size = new System.Drawing.Size(6, 223);
             this.splitter2.TabIndex = 1;
             this.splitter2.TabStop = false;
             // 
@@ -494,7 +498,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.pnlSongs.Location = new System.Drawing.Point(0, 0);
             this.pnlSongs.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSongs.Name = "pnlSongs";
-            this.pnlSongs.Size = new System.Drawing.Size(644, 262);
+            this.pnlSongs.Size = new System.Drawing.Size(644, 223);
             this.pnlSongs.TabIndex = 0;
             // 
             // lstSong
@@ -505,7 +509,7 @@ namespace WinAppMediaPlayerClientVersie2
             this.lstSong.Location = new System.Drawing.Point(0, 16);
             this.lstSong.Margin = new System.Windows.Forms.Padding(4);
             this.lstSong.Name = "lstSong";
-            this.lstSong.Size = new System.Drawing.Size(644, 246);
+            this.lstSong.Size = new System.Drawing.Size(644, 207);
             this.lstSong.TabIndex = 6;
             // 
             // label7
@@ -528,7 +532,7 @@ namespace WinAppMediaPlayerClientVersie2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 1014);
+            this.ClientSize = new System.Drawing.Size(1532, 975);
             this.Controls.Add(this.pnlMediaPlayer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.splitter1);
