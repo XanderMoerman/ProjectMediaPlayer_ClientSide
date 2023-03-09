@@ -65,40 +65,43 @@ namespace WinAppMediaPlayerClientVersie2
             }
             catch(Exception ex)
             {
-                txtMelding.AppendText(ex.Message);
+                txtMelding.AppendText(ex.Message + "\r\n");
             }
         }
 
         private void bgWorkerOntvang_DoWork(object sender, DoWorkEventArgs e)
         {
-            while(client.Connected)
+            string bericht = "";
+            while (bericht != "Disconnect")
             {
-                string bericht;
                 try
                 {
                     bericht = reader.ReadLine();
-                    if (bericht == "Disconnect") break; // verbinding verbreken
-                    if (bericht.StartsWith("SONGLISTADD")) // add song
+                    if (bericht == "Disconnect") ; // verbinding verbreken
+                    else if (bericht == null) ;
+                    else if (bericht.StartsWith("SONGLISTADD")) // add song
                     {
                         string Song = bericht.Remove(0, 12);
-                        if (lstSong.Items.Contains(Song)) return; // als de song al bestaat
-                        lstSong.Invoke(new MethodInvoker(delegate ()
+                        if (!lstSong.Items.Contains(Song)) // als de song nog niet bestaat
                         {
-                            lstSong.Items.Add(Song); // voeg toe aan de list
-                        }));
-                        return;
+                            lstSong.Invoke(new MethodInvoker(delegate ()
+                            {
+                                lstSong.Items.Add(Song); // voeg toe aan de list
+                            }));
+                        }
                     }
-                    if (bericht.StartsWith("PLAYLISTADD")) // add song
+                    else if (bericht.StartsWith("PLAYLISTADD")) // add song
                     {
                         string Song = bericht.Remove(0, 12);
-                        if (lstSongPlayList.Items.Contains(Song)) return; // als de song al bestaat
-                        lstSongPlayList.Invoke(new MethodInvoker(delegate ()
+                        if (!lstSongPlayList.Items.Contains(Song)) // als de song nog niet bestaat
                         {
-                            lstSongPlayList.Items.Add(Song); // voeg toe aan de list
-                        }));
-                        return;
+                            lstSongPlayList.Invoke(new MethodInvoker(delegate ()
+                            {
+                                lstSongPlayList.Items.Add(Song); // voeg toe aan de list
+                            }));
+                        }
                     }
-                    if (bericht.StartsWith("PLAYLISTREMOVE"))
+                    else if (bericht.StartsWith("PLAYLISTREMOVE"))
                     {
                         string Song = bericht.Remove(0, 15);
                         lstSongPlayList.Invoke(new MethodInvoker(delegate ()
@@ -106,12 +109,14 @@ namespace WinAppMediaPlayerClientVersie2
                             // als de song bestaat, verwijder
                             if (lstSongPlayList.Items.Contains(Song)) lstSongPlayList.Items.Remove(Song);
                         }));
-                        return;
                     }
-                    txtCommunicatie.Invoke(new MethodInvoker(delegate ()
+                    else
                     {
-                        txtCommunicatie.AppendText(bericht + "\r\n");
-                    }));
+                        txtCommunicatie.Invoke(new MethodInvoker(delegate ()
+                        {
+                            txtCommunicatie.AppendText(bericht + "\r\n");
+                        }));
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -159,7 +164,7 @@ namespace WinAppMediaPlayerClientVersie2
             }
             catch
             {
-                txtMelding.AppendText("Verbinding verbreken mislukt.");
+                txtMelding.AppendText("Verbinding verbreken mislukt.\r\n");
             }
         }
 
